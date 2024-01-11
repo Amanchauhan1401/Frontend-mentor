@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --Red: hsl(1, 90%, 64%);
+  --Blue: hsl(219, 85%, 26%);
+  --White: hsl(0, 0%, 100%);
+  --Very-light-grayish-blue: hsl(210, 60%, 98%);
+  --Light-grayish-blue-1: hsl(211, 68%, 94%);
+  --Light-grayish-blue-2: hsl(205, 33%, 90%);
+  --Grayish-blue: hsl(219, 14%, 63%);
+  --Dark-grayish-blue: hsl(219, 12%, 42%);
+  --Very-dark-blue: hsl(224, 21%, 14%);
+}
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--Very-light-grayish-blue);
+}
+img{
+    width: 100%;
+    display: block;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+ 
+.section-Wrapper {
+  display: grid;
+  place-content: center;
+  min-height: 100svh;
+  padding-inline: .5rem;
+}
+
+ 
+.flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding-inline: .5rem;
+}
+ 
+.section {
+  padding: .25rem;
+  background-color: var(--White);
+  box-shadow: 0px 0px 5px 0px var(--Light-grayish-blue-2) ;
+ }
+
+.Notification{ 
+     position: relative;
+     text-align: left;
+     background-color: var(--White);
+ }
+
+.Notification[data-visible="true"]{
+    background-color: var(--Very-light-grayish-blue);
+    border-radius: 1rem;
+}
+ 
+.Main-Button{
+    border: none;
+    background-color: var(--White);
+    font-size: .75rem;
+    cursor: pointer;
+    transition: 200ms ease-in-out ;
+    color: var(--Red);
+}
+.Main-Button[data-control="false"]{
+    color: var(--Very-dark-blue);
+}
+
+.Main-Button:hover{
+    transform: scale(1.1);
+   }
+.Notifications-Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Notifications-Heading {
+    font-size: 1rem;
+    color: var(--Very-dark-blue);
+  font-weight: 800;
+}
+.Notifications-Heading > span {
+    color: var(--White);
+    background-color: var(--Blue);
+    padding-inline: .5rem;
+    border-radius: 4px;
+}
+@media (min-width: 35em) {
+    .section-Wrapper {
+     max-width: 600px;
+     margin: auto;
+    }
+    .section{
+      padding: 2rem;
+    }
+    .Notifications-Header{
+        padding-inline: 1rem;
+    }
+    .Notifications-Heading{
+        font-size:1.5rem;
+    }
+    .Main-Button{
+        font-size: 1rem;
+    }
+  }
+
+.Profile-Pic{
+    width: 2.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.Notifications-Names{
+    color: var(--Very-dark-blue);
+    font-weight: 800;
+    transition: 100ms ease-in-out;
+    cursor: pointer;
+
+}
+.Notifications-Names:hover{
+    color: var(--Blue);
+}
+.Notifications-Point{
+    font-weight: 800;
+    color: var(--Dark-grayish-blue);
+    transition: 100ms ease-in-out;
+    cursor: pointer;
+
+}
+.Notifications-Point:hover{
+    color: var(--Blue);}
+
+.Notifications-Timing{
+    color: var(--Grayish-blue);
+    margin-top: -1rem;
+    margin-left: 3.5rem;
+    padding-bottom: .75rem;
+}
+.Notifications-Notification{
+    font-weight: 800  ;
+    color: var(--Blue)  ;
+}
+.Dot{
+    position: relative;
+}
+.Dot::after{
+    content: '';
+    position: absolute;
+    margin-top: .3rem;
+    margin-left: 1rem;
+    inset: 0;
+    background-color: var(--Red);
+    width: .75rem;
+    height: .75rem;
+    border-radius: 50%;
+}
+
+.Dot[data-state="false"]{
+    display: none;
+}
+
+.Notifications-Image{
+    width: 2.5rem;
+    aspect-ratio: 1;
+}
+.Notifications-Message-Wrapper{
+    padding-left: 3rem;
+    padding-right: 1rem;
+    word-spacing: 2px;
+}
+
+.Notifications-Message{
+    border: 1px solid var(--Grayish-blue);
+    background-color: var(--White);
+    padding: .25rem 1rem;
+    border-radius: .25rem;
+    color: var(--Grayish-blue);
+    font-size: .85rem;
+    transition: 300ms ease-in-out;
+    cursor: pointer;
+
+}
+.Notifications-Message:hover{
+    background-color: var(--Light-grayish-blue-2);
+    color: var(--Dark-grayish-blue);
+}
+@media (min-width:35em) {
+    .Notifications-Message{
+        padding: 1rem 2rem;
+    }
+}
